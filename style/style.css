@@ -35,3 +35,23 @@ textarea { height: 120px; resize: vertical; }
 
 /* Footer */
 footer { padding: 40px 0; text-align: center; background: var(--preto); color: var(--branco); margin-top: 50px; }
+/* Cards de Produtos */
+.card-produto {
+    background: var(--branco);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Sombra suave */
+    transition: transform 0.3s ease;
+    padding: 20px;
+    text-align: center;
+}
+
+.card-produto:hover {
+    transform: translateY(-5px); /* Efeito de levante no mouse */
+}
+
+/* Botões Modernos */
+.btn-cta {
+    border-radius: 50px; /* Bordas arredondadas estilo moderno */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
