@@ -48,31 +48,46 @@ footer { padding: 40px 0; text-align: center; background: var(--preto); color: v
 .card-produto {
     background: var(--branco);
     border-radius: 12px;
-    padding: 15px;
+    padding: 20px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra suave para profundidade */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #ddd;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-
 /* Efeito ao passar o mouse (Hover) */
 .card-produto:hover {
-    transform: translateY(-5px); /* O card "sobe" um pouco [cite: 816] */
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    border-color: var(--vermelho);
 }
-
 /* Estilo das imagens nos cards */
 .card-produto img {
     width: 100%;
-    height: 180px;
-    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    height: 200px;
+    object-fit: cover; /* Não distorce a imagem do material */
     border-radius: 8px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .card-produto h3 {
-    color: var(--vermelho); /* Cor principal baseada na sua logo [cite: 512, 514] */
+    font-size: 1.2rem;
+    color: var(--preto);
     margin-bottom: 10px;
+}
+.card-produto p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+.card-produto .btn-submit {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 10px;
 }
 .btn-cta {
     border-radius: 50px; /* Bordas arredondadas estilo moderno */
@@ -155,7 +170,7 @@ footer { padding: 40px 0; text-align: center; background: var(--preto); color: v
 .cabecalho-container {
   display: flex;       /* Coloca logo e texto lado a lado */
   align-items: center; /* Alinha verticalmente o logo com o texto */
-  gap: 10px;           /* Cria um espaço entre a imagem e o texto */
+            /* Cria um espaço entre a imagem e o texto */
   font-family: Arial, sans-serif;
 }
 
@@ -177,4 +192,19 @@ footer { padding: 40px 0; text-align: center; background: var(--preto); color: v
   margin: 0;           /* Remove espaços padrão do p */
   font-size: 16px;
   color: #555;
+}
+.vitrine-header {
+    text-align: center;
+    padding: 40px 0;
+}
+.vitrine-header h2 {
+    color: var(--preto);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.vitrine-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
 }
