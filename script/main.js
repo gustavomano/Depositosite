@@ -1,53 +1,105 @@
-// 1. Espera o DOM carregar para garantir que todos os elementos existem na página
+const NUMERO_WHATSAPP = '551236645080';
+
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // --- LÓGICA DO MENU RESPONSIVO ---
+
+    // --- MENU RESPONSIVO ---
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
 
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', () => {
-            // Alterna a classe 'active' no menu para ele aparecer/sumir
             navMenu.classList.toggle('active');
-            // Opcional: anima o botão se você tiver CSS para isso
             menuToggle.classList.toggle('is-active');
         });
     }
 
-    // --- LÓGICA DO FORMULÁRIO DE ORÇAMENTO ---
+    // --- FORMULÁRIO DE ORÇAMENTO (lista de materiais + envio direto pro WhatsApp) ---
     const formOrcamento = document.getElementById('form-orcamento');
 
     if (formOrcamento) {
-        formOrcamento.addEventListener('submit', async (e) => {
-            e.preventDefault(); // Impede a página de recarregar
+        const itemInput = document.getElementById('item-input');
+        const btnAdicionar = document.getElementById('btn-adicionar');
+        const listaMateriaisEl = document.getElementById('lista-materiais');
+        const listaVaziaEl = document.getElementById('lista-vazia');
+        const materiais = [];
 
-            // Captura os dados do formulário
-            const dados = {
-                nome: document.getElementById('nome').value,
-                whatsapp: document.getElementById('whatsapp').value,
-                materiais: document.getElementById('materiais').value
-            };
+        function renderLista() {
+            listaMateriaisEl.innerHTML = '';
 
-            try {
-                // Envia os dados para a sua API no Render
-                const response = await fetch('https://wm-babolange-api.onrender.com/orcamento', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(dados)
+            materiais.forEach((item, index) => {
+                const li = document.createElement('li');
+
+                const texto = document.createElement('span');
+                texto.textContent = item;
+
+                const btnRemover = document.createElement('button');
+                btnRemover.type = 'button';
+                btnRemover.className = 'remover-item';
+                btnRemover.setAttribute('aria-label', 'Remover item');
+                btnRemover.textContent = '×';
+                btnRemover.addEventListener('click', () => {
+                    materiais.splice(index, 1);
+                    renderLista();
                 });
 
-                // Recebe a URL do WhatsApp gerada pelo Back-end
-                const res = await response.json();
+                li.appendChild(texto);
+                li.appendChild(btnRemover);
+                listaMateriaisEl.appendChild(li);
+            });
 
-                // Redireciona o cliente para o WhatsApp com a mensagem pronta
-                if (res.url) {
-                    window.location.href = res.url;
-                }
+            listaVaziaEl.style.display = materiais.length ? 'none' : 'block';
+        }
 
-            } catch (error) {
-                console.error("Erro ao processar orçamento:", error);
-                alert("Ops! Ocorreu um erro ao conectar com o servidor. Tente novamente em instantes.");
+        function adicionarItem() {
+            const valor = itemInput.value.trim();
+            if (!valor) return;
+
+            materiais.push(valor);
+            itemInput.value = '';
+            itemInput.focus();
+            renderLista();
+        }
+
+        btnAdicionar.addEventListener('click', adicionarItem);
+
+        itemInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                adicionarItem();
             }
+        });
+
+        renderLista();
+
+        formOrcamento.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const nome = document.getElementById('nome').value.trim();
+            const telefone = document.getElementById('telefone').value.trim();
+            const observacoes = document.getElementById('observacoes').value.trim();
+
+            if (!nome || !telefone) {
+                alert('Preencha seu nome e WhatsApp antes de enviar.');
+                return;
+            }
+
+            if (materiais.length === 0) {
+                alert('Adicione pelo menos um item à sua lista de materiais.');
+                return;
+            }
+
+            let mensagem = 'Novo Orçamento - WM Babolange\n\n';
+            mensagem += `Cliente: ${nome}\n`;
+            mensagem += `Contato: ${telefone}\n`;
+            mensagem += 'Materiais: \n';
+            mensagem += materiais.join('\n');
+
+            if (observacoes) {
+                mensagem += `\n\nObservações: ${observacoes}`;
+            }
+
+            const url = `https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(mensagem)}`;
+            window.location.href = url;
         });
     }
 });
