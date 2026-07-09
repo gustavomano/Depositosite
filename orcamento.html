@@ -1,69 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Depósito WM Babolange - Materiais de Construção</title>
+    <title>Peça seu Orçamento - Depósito WM Babolange</title>
+    <meta name="description" content="Monte sua lista de materiais e receba o orçamento direto pelo WhatsApp do Depósito WM Babolange.">
+    <link rel="icon" href="image/logo-wm.png">
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-   <header class="main-header">
-    <div class="container nav-wrapper">
-        <img src="image/logo-wm.png" alt="Depósito WM Babolange" class="logo">
-        <div class="texto-container">
-    <h1 class="titulo">Depósito WM</h1>
-    <p class="slogan">Tudo para sua obra, do básico ao acabamento.</p>
-  </div>
-        <button class="menu-toggle" aria-label="Abrir Menu">
-            <span class="hamburger"></span>
-        </button>
 
+    <header class="main-header">
+        <div class="container header-top">
+            <a href="index.html" class="brand">
+                <img src="image/logo-wm.png" alt="Depósito WM Babolange" class="logo">
+            </a>
+            <div class="header-actions">
+                <a href="https://wa.me/551236645080?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20do%20Dep%C3%B3sito%20WM%20Babolange." class="btn btn-whatsapp" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.11-1.34A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.6 0-3.1-.43-4.4-1.19l-.32-.19-3.03.8.81-2.95-.2-.3A7.94 7.94 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.29-5.77c-.24-.12-1.4-.69-1.62-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1-.37-1.9-1.17-.7-.62-1.18-1.39-1.31-1.63-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.46-.39-.4-.54-.4h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.13 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.4-.57 1.6-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.46-.28z"/></svg>
+                    Fale no WhatsApp
+                </a>
+                <a href="orcamento.html" class="btn btn-vermelho">Peça seu Orçamento</a>
+            </div>
+            <button class="menu-toggle" aria-label="Abrir Menu">
+                <span class="hamburger"></span>
+            </button>
+        </div>
         <nav class="nav-menu">
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="produtos.html">Produtos</a></li>
-                <li><a href="localizacao.html">Localização</a></li>
-                <li><a href="quem-somos.html">Quem somos</a></li>
-                <li><a href="orcamento.html" class="btn-cta">Pedir Orçamento</a></li>
-            </ul>
-    </div>
-</header>
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="localizacao.html">Localização</a></li>
+                    <li><a href="quem-somos.html">Quem Somos</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
-    <section class="hero">
+    <section class="hero-pagina">
         <div class="container">
-            <h1>Tudo para sua obra em um só lugar.</h1>
-            <p>Preço justo e entrega rápida para o seu projeto não parar.</p>
+            <h1>Peça seu Orçamento</h1>
+            <p>Monte sua lista de materiais e envie direto pelo WhatsApp.</p>
         </div>
     </section>
 
-    <main class="container">
-        <section id="orcamento" class="form-section">
-            <h2>Solicite seu Orçamento via WhatsApp</h2>
-            <p>Preencha os dados abaixo e receba o valor direto no seu celular.</p>
-            
-            <form id="form-orcamento">
-                <input type="text" id="nome" placeholder="Seu Nome" required>
-                <input type="tel" id="whatsapp" placeholder="Seu WhatsApp" required>
-                <textarea id="materiais" placeholder="Lista de Materiais (ex: 10 sacos de cimento, 2 mil tijolos...)" required></textarea>
-                <button type="submit" class="btn-submit">Enviar para o WhatsApp</button>
-            </form>
-        </section>
-    </main>
-
-   <footer>
+    <section class="secao">
         <div class="container">
-            <address>
-                <strong>Depósito WM "BABOLANGE"</strong><br>
-                Rua Waldyr, 60 - Vila Nova Suiça, Campos do Jordão - SP<br>
-                WhatsApp: (12)3664-5080
-            </address>
+            <div class="orcamento-card">
+                <h2>Faça seu orçamento!</h2>
+                <span class="destaque">Entraremos em contato o mais rápido possível</span>
+
+                <form id="form-orcamento">
+                    <div class="campo-grid">
+                        <div>
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" placeholder="Seu nome" required>
+                        </div>
+                        <div>
+                            <label for="telefone">WhatsApp</label>
+                            <input type="tel" id="telefone" placeholder="(12) 9 9999-9999" required>
+                        </div>
+                    </div>
+
+                    <p class="lista-titulo">Monte sua lista de materiais</p>
+                    <p class="lista-ajuda">Digite a quantidade e o produto e clique em Adicionar. Repita para cada item da sua lista.</p>
+
+                    <div class="item-adicionar">
+                        <input type="text" id="item-input" placeholder="Ex: 10 sacos de cimento CP2">
+                        <button type="button" id="btn-adicionar" class="btn btn-vermelho">Adicionar</button>
+                    </div>
+
+                    <ul class="lista-materiais" id="lista-materiais"></ul>
+                    <p class="lista-vazia" id="lista-vazia">Nenhum item adicionado ainda.</p>
+
+                    <div class="orcamento-observacoes">
+                        <label for="observacoes">Observações adicionais (opcional)</label>
+                        <textarea id="observacoes" placeholder="Ex: preciso de entrega até sexta-feira"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-whatsapp btn-bloco">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.11-1.34A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.6 0-3.1-.43-4.4-1.19l-.32-.19-3.03.8.81-2.95-.2-.3A7.94 7.94 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.29-5.77c-.24-.12-1.4-.69-1.62-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1-.37-1.9-1.17-.7-.62-1.18-1.39-1.31-1.63-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.46-.39-.4-.54-.4h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.13 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.4-.57 1.6-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.46-.28z"/></svg>
+                        Enviar pelo WhatsApp
+                    </button>
+                    <p class="lista-ajuda" style="text-align:center; margin-top: 14px;">Você será direcionado para o WhatsApp com sua lista pronta.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-topo">
+            <div class="container">
+                <div class="footer-contato">
+                    <div class="footer-contato-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 6.72 11.19 7.11 11.52a1.5 1.5 0 0 0 1.78 0C13.28 21.19 20 15.25 20 10c0-4.42-3.58-8-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                        Rua Waldyr, 60 - Vila Nova Suíça, Campos do Jordão - SP
+                    </div>
+                    <div class="footer-contato-item">
+                        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.2 1.1L6.6 10.8z"/></svg>
+                        (12) 3664-5080
+                    </div>
+                </div>
+                <a href="https://wa.me/551236645080" class="btn btn-outline" target="_blank" rel="noopener">Fale conosco no WhatsApp</a>
+            </div>
         </div>
         <div class="footer-bottom">
-        <p>&copy; 2026 Depósito WM Babolange - Todos os direitos reservados.</p>
-    </div>
+            <p>&copy; 2026 Depósito WM Babolange - Todos os direitos reservados.</p>
+        </div>
     </footer>
-<script src="script/main.js"></script>
+
+    <a href="https://wa.me/551236645080" class="whatsapp-flutuante" target="_blank" rel="noopener" aria-label="Fale no WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.11-1.34A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.6 0-3.1-.43-4.4-1.19l-.32-.19-3.03.8.81-2.95-.2-.3A7.94 7.94 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.29-5.77c-.24-.12-1.4-.69-1.62-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1-.37-1.9-1.17-.7-.62-1.18-1.39-1.31-1.63-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.46-.39-.4-.54-.4h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.13 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.4-.57 1.6-1.12.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.46-.28z"/></svg>
+    </a>
+
+    <script src="script/main.js"></script>
 </body>
-</html>  
-  
-  
+</html>
