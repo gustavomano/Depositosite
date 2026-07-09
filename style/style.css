@@ -378,15 +378,6 @@ a { color: inherit; }
     height: 190px;
     object-fit: cover;
 }
-.card-categoria .imagem-placeholder {
-    width: 100%;
-    height: 190px;
-    background: linear-gradient(135deg, var(--preto), var(--vermelho-escuro));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.card-categoria .imagem-placeholder svg { width: 54px; height: 54px; fill: rgba(255, 255, 255, 0.85); }
 .card-categoria-corpo { padding: 22px; flex: 1; display: flex; flex-direction: column; }
 .card-categoria h3 {
     font-size: 1.15rem;
@@ -463,14 +454,20 @@ a { color: inherit; }
     box-shadow: var(--sombra);
 }
 .sobre-imagem img { width: 100%; height: 320px; object-fit: cover; }
-.sobre-imagem .imagem-placeholder-grande {
-    height: 320px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, var(--preto), var(--vermelho-escuro));
+
+.galeria-estrutura {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 40px;
 }
-.sobre-imagem .imagem-placeholder-grande svg { width: 80px; height: 80px; fill: rgba(255, 255, 255, 0.85); }
+.galeria-estrutura img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
 
 .valores-grid {
     display: grid;
